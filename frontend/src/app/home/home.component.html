@@ -1,0 +1,19 @@
+<form [formGroup]="currentNumForm" (ngSubmit)="onSubmit()">
+  <p>Current number : {{num}}</p>
+  <button class="button" type="submit">Reset</button>
+</form>
+
+
+<form [formGroup]="postForm" (ngSubmit)="postSubmit()">
+
+  <div>
+    <label for="newnum">
+      Ajouter un nombre
+    </label>
+    <input id="newnum" type="text" formControlName="newnum">
+  </div>
+
+  <p>Résultat {{res}}</p>
+  <button class="button" type="submit">Purchase</button>
+
+</form>
