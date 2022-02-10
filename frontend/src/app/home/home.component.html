@@ -1,5 +1,8 @@
 <form [formGroup]="currentNumForm" (ngSubmit)="onSubmit()">
   <p>Current number : {{num}}</p>
+</form>
+
+<form [formGroup]="currentNumForm" (ngSubmit)="reset()">
   <button class="button" type="submit">Reset</button>
 </form>
 
@@ -13,7 +16,7 @@
     <input id="newnum" type="text" formControlName="newnum">
   </div>
 
-  <p>Résultat {{res}}</p>
+  <p>Résultat <a id="val"> {{res}}</a> </p>
   <button class="button" id="resultat" type="submit">Purchase</button>
 
 </form>
