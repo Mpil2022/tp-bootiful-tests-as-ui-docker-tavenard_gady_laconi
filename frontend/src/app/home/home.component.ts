@@ -41,9 +41,20 @@ export class HomeComponent implements OnInit {
       next:(num: number) => this._res = num});
 
     // mettre a jour res
-    //this._res = this.postForm.value.newnum;
   }
 
+  reset():void{
+    console.log("yooooooooooooooooooooooooooooooooo")
+    this._http.delete("http://localhost:8080/adder")
+        .subscribe({
+          next: data => {
+          },
+          error: error => {
+            console.error('There was an error!', error);
+          }
+        });
+    this.onSubmit();
+  }
   private _options(headerList: object = {}): any {
     return { headers: new HttpHeaders(Object.assign({ 'Content-Type': 'application/json' }, headerList)) };
   }
